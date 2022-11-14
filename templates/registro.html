@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Cliente V.I.P - Registro</title>
+</head>
+
+<body>
+
+<h1>Cliente V.I.P.: formulario de registro del cliente y del responsable.</h1>
+<p>Complete todos los datos y siga las indicaciones de las casillas.</p>
+<form method = "POST" action="{{url_for('registro')}}">
+        
+    <h2> Datos del Cliente Canino</h2>
+    <label>Nombre:</label>
+    <input type="text" name="nombre_canino" required><br><br>
+    <label>Fecha de Nacimiento (formato dd/mm/aaaa):</label>
+    <input type="date" name="fecha_nacimiento" placeholder="dd/mm/aaaa"
+        minlength="10" maxlength="10" required><br><br>
+    <label>Raza (o mestizo):</label>
+    <input type="text" name="raza" maxlenght="30" required>
+    <label>Peso (kg):</label>
+    <input type="number" name="peso" placeholder="Peso en kg, un decimal"
+        step="0.1" min="0.5"required><br><br>
+    <label>Sexo (Macho, M; Hembra, H):</label>
+    <input type="text" name="sexo" placeholder="M o H" maxlength="1" required>
+    <label>Esterilizado(Si, S; No, N):</label>
+    <input type="text" name="esterilizado" placeholder="S o N" maxlenght="1"
+        required><br><br>
+        
+    <h2>Datos del Responsable</h2>
+    <label>DNI (sin puntos):</label>
+    <input type="text" name="dni_responsable" minlenght="8" maxlenght="8"
+        required><br><br>
+    <label>Apellido/s:</label>
+    <input type="text" name="apellido_responsable" required>
+    <label>Nombre/s:</label>
+    <input type="text" name="nombre_responsable" required><br><br>
+    <label>Domicilio (calle y número):</label>
+    <input type="text" name="calle_y_numero" maxlenght="25" required>
+    <label>Localidad:</label>
+    <input type="text" name="localidad" maxlenght="30" required>
+    <label>Provincia:</label>
+    <input type="text" name="provincia" maxlenght="25" required><br><br>
+    <label>Teléfono:</label>
+    <input type="text" name="telefono" placeholder="hasta 12 dígitos"
+        maxlenght="12" required><br><br>
+</form>
+
+<form action="{{url_for('index')}}">
+    <input type="submit" value="Registrar">
+</form>
+
+</body>
+</html>
+
+<footer>
+    <p>Martín A. García Romano, Programador Python, Inove, 2022</p>
+</footer>

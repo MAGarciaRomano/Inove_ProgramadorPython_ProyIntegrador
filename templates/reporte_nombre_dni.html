@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<!-- Titulo de la página-->
+<head>
+    <title>Cliente V.I.P. - Consulta por DNI responsable y nombre canino</title>
+</head>
+
+<body>
+    <h1>Cliente V.I.P.: Reporte de consulta.</h1>
+        <h2>Datos del cliente canino:</h2>
+        
+<table border="1">
+    <thead cellpadding="1.0" cellspacing="1.0">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha Nacimiento</th>
+            <th>Raza</th>
+            <th>Peso</th>
+            <th>Sexo</th>
+            <th>Esterilizado</th>
+        </tr>    
+    
+        <tr>
+            <td>{['nombre_canino']}</td>
+            <td>{['fecha_nacimiento']}</td>
+            <td>{['raza']}</td>
+            <td>{['peso']}</td>
+            <td>{['sexo']}</td>
+            <td>{['esterilizado']}</td>
+        </tr>
+    </thead>
+</table>
+
+        <h2>Datos del cliente canino:</h2>
+<table border="1">
+    <thead cellpadding="1.0" cellspacing="1.0">
+        <tr>
+            <th>Moquillo</th>
+            <th>Hepatitis</th>
+            <th>Parvovirus</th>
+            <th>Quíntuple</th>
+            <th>Rabia</th>
+            <th>Desp. Interno</th>
+            <th>Desp. Externo</th>
+        </tr>    
+    
+        <tr>
+            <td>{['moquillo']}</td>
+            <td>{['hepatitis']}</td>
+            <td>{['parvovirus']}</td>
+            <td>{['quintuple']}</td>
+            <td>{['rabia']}</td>
+            <td>{['desparasitado_interno']}</td>
+            <td>{['desparasitado_externo']}</td>
+        </tr>
+    </thead>
+</table>
+
+    <h2>Datos del responsable:</h2>
+<table border="1">
+    <thead cellpadding="1.0" cellspacing="1.0">        
+        <tr>
+            <th>DNI</th>
+            <th>Responsable</th>
+            <th>Teléfono</th>
+        </tr>
+
+        <tr>
+            <td>{['dni_responsable']}</td>
+            <td>{['apellido_y_nombre']}</td>
+            <td>{['telefono']}</td>
+        </tr>
+    </thead>
+</table>
+
+<br><br>
+
+<form action="{{url_for('index')}}">
+    <input type="submit" value="Volver a Pantalla Inicial"/>
+</form>
+
+</body>
+</html>

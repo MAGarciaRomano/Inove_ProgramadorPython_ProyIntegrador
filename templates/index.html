@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>CLIENTE V.I.P. - Inicio</title>
+</head>
+    
+<body>
+    <h1>¡Bienvenido a CLIENTE V.I.P.*!</h1>
+    <h3>* Very Important Pet</h3>
+    <h2>Gestor de clientes caninos.</h2>
+
+    <h3>[POST] /registro ---> Ingreso de un nuevo cliente canino.</h3>
+    <form action="{{url_for('registro')}}">
+        <input type="submit" value="Registrar nuevo cliente"/>
+    </form>
+
+    <h3>[POST] /consulta por nombre del canino y DNI del responsable.</h3>
+    <form action="{{url_for('consulta_nombre_dni')}}">
+        <input type="submit" value="Consulta por nombre y DNI"/>
+    </form>
+
+           
+</body>
+</html>
+    
+<footer>
+    <p>Martín A. García Romano, Programador Python, Inove, 2022</p>
+</footer>
+    
