@@ -158,8 +158,11 @@ def consulta_nombre_dni():
             # datos veterinarios del canino o del responsable, o para eliminar un registro necesito hacer funcionar
             # esta parte.
             # Estoy perdido.
+            
+            reporte = clientevip.consulta_nombre_dni(cons_nombre_canino, cons_dni_responsable)
+            return render_template('reporte_nombre_dni.html', reporte=reporte)
 
-            return render_template('reporte_nombre_dni.html')
+        
             # return (nombre_canino, dni_responsable)
         except:
             return jsonify({'trace': traceback.format_exc()})
