@@ -21,14 +21,16 @@
             <th>Esterilizado</th>
         </tr>    
     
+        {% for row in reporte %}
         <tr>
-            <td>{['nombre_canino']}</td>
-            <td>{['fecha_nacimiento']}</td>
-            <td>{['raza']}</td>
-            <td>{['peso']}</td>
-            <td>{['sexo']}</td>
-            <td>{['esterilizado']}</td>
+            <td>{{row['nombre_canino']}}</td>
+            <td>{{row['fecha_nacimiento']}}</td>
+            <td>{{row['raza']}}</td>
+            <td>{{row['peso']}}</td>
+            <td>{{row['sexo']}}</td>
+            <td>{{row['esterilizado']}}</td>
         </tr>
+        {% endfor %}
     </thead>
 </table>
 
@@ -45,15 +47,17 @@
             <th>Desp. Externo</th>
         </tr>    
     
+        {% for row in reporte %}
         <tr>
-            <td>{['moquillo']}</td>
-            <td>{['hepatitis']}</td>
-            <td>{['parvovirus']}</td>
-            <td>{['quintuple']}</td>
-            <td>{['rabia']}</td>
-            <td>{['desparasitado_interno']}</td>
-            <td>{['desparasitado_externo']}</td>
+            <td>{{row['moquillo']}}</td>
+            <td>{{row['hepatitis']}}</td>
+            <td>{{row['parvovirus']}}</td>
+            <td>{{row['quintuple']}}</td>
+            <td>{{row['rabia']}}</td>
+            <td>{{row['desparasitado_interno']}}</td>
+            <td>{{row['desparasitado_externo']}}</td>
         </tr>
+        {% endfor %}
     </thead>
 </table>
 
@@ -66,11 +70,13 @@
             <th>Teléfono</th>
         </tr>
 
+        {% for row in reporte %}
         <tr>
-            <td>{['dni_responsable']}</td>
-            <td>{['apellido_y_nombre']}</td>
-            <td>{['telefono']}</td>
+            <td>{{row['dni_responsable']}}</td>
+            <td>{{row['apellido_y_nombre']}}</td>
+            <td>{{row['telefono']}}</td>
         </tr>
+        {% endfor %}
     </thead>
 </table>
 
@@ -82,3 +88,7 @@
 
 </body>
 </html>
+
+<footer>
+    <p>Martín A. García Romano, Programador Python, Inove, 2022</p>
+</footer>
