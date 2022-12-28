@@ -75,17 +75,11 @@ def insert(nombre_canino, fecha_nacimiento, edad_canino, raza, peso, sexo, ester
     db.session.add(nuevo_cliente)
     db.session.commit()
 
-
 # Función que realiza consulta por nombre del canino y dni del responsable.
 def consulta_nombre_dni(nombre_canino, dni_responsable):
     
     query = db.session.query(Cliente).filter((Cliente.nombre_canino==nombre_canino)&(Cliente.dni_responsable==dni_responsable))
     
-    #if limit>0:
-    #    query = query.limit(limit)
-    #    if offset > 0:
-    #        query = query.offset(offset)
-
     json_consulta_lista =[]
     
     for resultado in query:
@@ -102,7 +96,7 @@ def consulta_nombre_dni(nombre_canino, dni_responsable):
                         'rabia': resultado.rabia,
                         'desparasitado_interno': resultado.desparasitado_interno,
                         'desparasitado_externo': resultado.desparasitado_externo,
-                        'dni_respnsable': resultado.dni_responsable,
+                        'dni_responsable': resultado.dni_responsable,
                         'apellido_y_nombre': resultado.apellido_y_nombre,
                         'telefono':resultado.telefono}
         

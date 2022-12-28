@@ -8,12 +8,12 @@ Año: 2022
 Cliente V.I.P.
 '''
 
-from datetime import datetime, date
-from dateutil.relativedelta import relativedelta
-
 import traceback
-from flask import Flask, request, jsonify, render_template, Response, redirect, url_for
+from datetime import date, datetime
 
+from dateutil.relativedelta import relativedelta
+from flask import (Flask, Response, jsonify, redirect, render_template,
+                   request, url_for)
 
 import clientevip
 
@@ -146,26 +146,15 @@ def consulta_nombre_dni():
 
             print("Consultar por el cliente", cons_nombre_canino, "del responsable de DNI", cons_dni_responsable)
             
-            # Acá está mi duda.
-            # Necesito que tanto el nombre del canino como el DNI del responsable lleguen
-            # a la función consulta_nombre_dni en clientevip.py para poder hacer la query.
-            # Honestamente estoy embarullado e incluso ahora dudo de si puedo hacerlo.
-            # Supongo que debe ser mediante un return.
-            # Ensayé otra opción que era llamar a la función que está en clientevip.py para que se ejecute,
-            # pero después no encontraba forma de mostrar un nuevo template para mostar el resultado de la
-            # consulta, que sería a través de reporte_nombre_dni.html
-            # Esta parte del programa es importante, porque tanto para consultar, como para acceder para actualizar
-            # datos veterinarios del canino o del responsable, o para eliminar un registro necesito hacer funcionar
-            # esta parte.
-            # Estoy perdido.
-            
             reporte = clientevip.consulta_nombre_dni(cons_nombre_canino, cons_dni_responsable)
             return render_template('reporte_nombre_dni.html', reporte=reporte)
-
-        
-            # return (nombre_canino, dni_responsable)
+            
+            
         except:
             return jsonify({'trace': traceback.format_exc()})
+
+# Ruta que se ingresa por la URL 127.0.0.1:5000/consulta_nombre_dni/reporte_nombre_dni
+@app.route("/consulta_nombre_dni/reporte_nombre_dni")
 
 
 # Este método se ejecutará solo una vez la primera vez que se ingresa a un endpoint.
